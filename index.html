@@ -728,7 +728,7 @@
         </script>
     <script>window.addEventListener('load', function(){
         // Try automatically loading a command based on URL parameters:
-        if ( (hash = window.location.hash) && (json = JSON.parse(hash.slice(1))) && json.cmdline ) {
+        if ( (hash = window.location.hash) && (json = JSON.parse(decodeURIComponent(hash.slice(1)))) && json.cmdline ) {
             document.querySelector('div.optionBtn.minWidth[section="cmd"]').click();
             document.querySelector('input#ffmpegScript').value = json.cmdline;
         }
